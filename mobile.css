@@ -41,8 +41,8 @@ p.semiBigFont {
     padding: 15px;
     border-radius: 20px;
     background-image: linear-gradient(#95ffc5, #58ffff);
-    min-width: 430px;
     margin-bottom: 20px;
+    max-width: 500px;
  }
  
 #expand-container {
@@ -51,23 +51,19 @@ p.semiBigFont {
 
 th {
     padding-top: 10px;
-    padding-bottom: 20px;
-    padding-left: 30px;
-    padding-right: 40px;
+    padding-bottom: 10px;
     text-align: -webkit-left;
   }
 
 td {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 30px;
-    padding-right: 40px;
+    padding-top: 0px;
+    padding-bottom: 0px;
     text-align: -webkit-left;
   }
 
 #expand-contract-mon {
-    margin-top: -100%;
-    transition: all 1s;
+    margin-top: -200%;
+    transition: all 0.5s;
   }
   
 #expand-contract-mon.expanded {
@@ -77,11 +73,12 @@ td {
      border-style: solid;
      border-width: 15px;
      border-radius: 10px;
+     text-align: -webkit-center;
   }
 
 #expand-contract-tue {
-    margin-top: -100%;
-    transition: all 1s;
+    margin-top: -200%;
+    transition: all 0.5s;
   }
   
 #expand-contract-tue.expanded {
@@ -91,4 +88,15 @@ td {
      border-style: solid;
      border-width: 15px;
      border-radius: 10px;
+     text-align: -webkit-center;
   }
+
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: white;
+    width: -webkit-fill-available;
+}
