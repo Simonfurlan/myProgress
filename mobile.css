@@ -20,7 +20,7 @@ body, html {
 
 p.bigFont { 
     font-family: "myBold", Verdana, Tahoma;
-    font-size: xxx-large;
+    font-size: -webkit-xxx-large;
     margin-bottom: 30px;
 }
 
