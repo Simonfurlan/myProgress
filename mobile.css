@@ -108,37 +108,26 @@ table {
   visibility: hidden;
   opacity: 0;
   float: right;
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   background: url(add-icon.png) no-repeat;
   background-size: 50px;
   background-position: center;
   border: none;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 50px;
 }
 
 .btnEdit {
   visibility: hidden;
   opacity: 0;
   float: right;
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   background: url(edit-icon.png) no-repeat;
   background-size: 17px;
   background-position: center;
   border: none;
   background-color: white;
-  border-radius: 20px;
-}
-
-.visible {
-  visibility: visible;
-  opacity: 1;
-  transition: opacity 2s linear;
-}
-.hidden {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s 2s, opacity 2s linear;
+  border-radius: 50px;
 }
