@@ -1,6 +1,7 @@
 body, html {
     margin: 5px;
     background-color: white;
+    text-align: -webkit-center;
 }
 
 @font-face {
@@ -22,18 +23,21 @@ p.bigFont {
     font-family: "myBold", Verdana, Tahoma;
     font-size: -webkit-xxx-large;
     margin-bottom: 30px;
+    text-align: -webkit-left;
 }
 
 * {
     font-family: "myNormal", Verdana, Tahoma;
-    font-size: large;
+    font-size: medium;
     margin: 0px;
+    text-align: -webkit-left;
 }
 
 p.semiBigFont {
     font-family: "mySemiBold", Verdana, Tahoma;
     font-size: xx-large;
     margin: 0px;
+    text-align: -webkit-left;
 }
 
 
