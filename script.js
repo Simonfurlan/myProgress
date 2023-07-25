@@ -67,6 +67,10 @@ function expandContract(day) {
                     btnMon.style.visibility = "visible";
                     btnMon.style.opacity = 1;
                     btnMon.style.transition = "opacity 0.25s linear";
+
+                    if(localStorage.getItem("tableMon0") == null){
+                      document.getElementById("btnMon").className = 'btnAdd';
+                    }
                 }
                 else{
                   btnMon.style.visibility = "hidden";
@@ -85,6 +89,10 @@ function expandContract(day) {
                   btnTue.style.visibility = "visible";
                   btnTue.style.opacity = 1;
                   btnTue.style.transition = "opacity 0.25s linear";
+
+                  if(localStorage.getItem("tableTue0") == null){
+                    document.getElementById("btnTue").className = 'btnAdd';
+                  }
                 }
                 else{
                   btnTue.style.visibility = "hidden";
