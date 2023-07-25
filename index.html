@@ -11,12 +11,13 @@
     <p class="bigFont">MyProgress</p>
     
     <div id="container" onclick="expandContract('m')">
-        <div>
-            <p class="semiBigFont">Monday</p>
+        <div id="title" style="display: flow-root;">
+            <p id="titleName" class="semiBigFont">Monday</p>
+            <button id="btnMon" class="btnEdit" onclick="buttonMonday()"></button>
         </div>
         
         <div id="expand-container">
-            <div id="expand-contract-mon" class="none">
+            <div id="expand-contract-mon" class="collapsed">
                 
                 <table id="tableMon">
                     <tr>
@@ -77,12 +78,13 @@
     </div>
 
     <div id="container" onclick="expandContract('t')">
-        <div>
-            <p class="semiBigFont">Tuesday</p>
+        <div id="title" style="display: flow-root;">
+            <p id="titleName" class="semiBigFont">Tuesday</p>
+            <button id="btnTue" class="btnEdit" onclick="buttonTuesday()"></button>
         </div>
         
         <div id="expand-container">
-            <div id="expand-contract-tue" class="none">
+            <div id="expand-contract-tue" class="collapsed">
                 
                 <table>
                     <tr>
