@@ -106,6 +106,7 @@ table {
 
 .btnAdd {
   visibility: hidden;
+  opacity: 0;
   float: right;
   width: 28px;
   height: 28px;
@@ -119,6 +120,7 @@ table {
 
 .btnEdit {
   visibility: hidden;
+  opacity: 0;
   float: right;
   width: 28px;
   height: 28px;
@@ -128,4 +130,15 @@ table {
   border: none;
   background-color: white;
   border-radius: 20px;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 2s linear;
+}
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
 }

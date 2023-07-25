@@ -8,10 +8,13 @@ function expandContract(day) {
                 mon.classList.toggle('collapsed')
                 
                 if(mon.classList.contains('expanded')){
-                  setTimeout(() => {btnMon.style.visibility = "visible";}, 250);
+                    btnMon.style.visibility = "visible";
+                    btnMon.style.opacity = 1;
+                    btnMon.style.transition = "opacity 0.25s linear";
                 }
                 else{
                   btnMon.style.visibility = "hidden";
+                  btnMon.style.opacity = 0;
                   btnMon.className = "btnEdit";
                 }
                 
@@ -23,10 +26,13 @@ function expandContract(day) {
                 tue.classList.toggle('collapsed')
 
                 if(tue.classList.contains('expanded')){
-                  setTimeout(() => {btnTue.style.visibility = "visible";}, 250);
+                  btnTue.style.visibility = "visible";
+                  btnTue.style.opacity = 1;
+                  btnTue.style.transition = "opacity 0.25s linear";
                 }
                 else{
                   btnTue.style.visibility = "hidden";
+                  btnTue.style.opacity = 0;
                   btnTue.className = "btnEdit";
                 }
               break;
@@ -66,3 +72,5 @@ function addToTable(table, e1, e2, e3, e4) {
 }
 
 addToTable("tableMon", "Calf Raises", "150kg", "6", "15")
+
+
