@@ -1,3 +1,6 @@
+let selectedTable = null;
+
+
 function expandContract(day) {
   if(event.target.id == "container" || event.target.id == "bottom-section" || event.target.id == "title" || event.target.id == "titleName"){
     switch(day) {
@@ -46,13 +49,43 @@ function buttonMonday() {
   const btnMon = document.getElementById("btnMon");
   btnMon.classList.toggle('btnAdd');
   btnMon.classList.toggle('btnEdit');
+
+  if(btnMon.classList.contains('btnEdit')){
+    //Case pressed on Add
+    selectedTable = "tableMon";
+    showPopup();
+  }
 }
 
 function buttonTuesday() {
   const btnTue = document.getElementById("btnTue");
   btnTue.classList.toggle('btnAdd');
   btnTue.classList.toggle('btnEdit');
+
+  if(btnTue.classList.contains('btnEdit')){
+    //Case pressed on Add
+    selectedTable = "tableTue";
+    showPopup();
+  }
 }
+
+
+
+function clickTableMon(){
+  if(btnMon.classList.contains('btnAdd')){
+    //Case pressed on Edit
+    console.log(event.target.parentNode.rowIndex);
+  }
+}
+
+function clickTableTue(){
+  if(btnTue.classList.contains('btnAdd')){
+    //Case pressed on Edit
+    console.log(event.target.parentNode.rowIndex);
+  }
+}
+
+
 
 function addToTable(table, e1, e2, e3, e4) {
 
@@ -71,6 +104,26 @@ function addToTable(table, e1, e2, e3, e4) {
   c4.innerText = e4
 }
 
-addToTable("tableMon", "Calf Raises", "150kg", "6", "15")
+function showPopup() {
+  var popup = document.getElementById('popup');
+  popup.style.display = 'block';
+}
 
+function closePopup() {
+  var popup = document.getElementById('popup');
+  popup.style.display = 'none';
+}
 
+function processInputs() {
+  var textInput = document.getElementById('text-input').value;
+  var intInput1 = parseInt(document.getElementById('integer-input1').value);
+  var intInput2 = parseInt(document.getElementById('integer-input2').value);
+  var intInput3 = parseInt(document.getElementById('integer-input3').value);
+
+  if (textInput === '' || isNaN(intInput1) || isNaN(intInput2) || isNaN(intInput3)) {
+      alert("Invalid input or canceled. Please try again.");
+  } else {
+      addToTable(selectedTable, textInput, intInput1, intInput2, intInput3)
+      closePopup();
+  }
+}

@@ -9,7 +9,24 @@
 
   <body>
     <p class="bigFont">MyProgress</p>
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2 style="margin-bottom: 10px;">Enter Data</h2>
+            <label style="margin-bottom: 6px;" for="text-input">Exercise: </label>
+            <input style="margin-top: 6px;margin-bottom: 10px;border: none;background: #e8e8e8;" placeholder="Benchpress" type="text" id="text-input">
+            <label style="margin-bottom: 6px;" for="integer-input1">Max Weight (kg): </label>
+            <input style="margin-top: 6px;margin-bottom: 10px;border: none;background: #e8e8e8;" placeholder="100" type="number" id="integer-input1">
+            <label style="margin-bottom: 6px;" for="integer-input2">Sets: </label>
+            <input style="margin-top: 6px;margin-bottom: 10px;border: none;background: #e8e8e8;" placeholder="4" type="number" id="integer-input2">
+            <label style="margin-bottom: 6px;" for="integer-input3">Weight Increments (kg): </label>
+            <input style="margin-top: 6px;margin-bottom: 10px;border: none;background: #e8e8e8;" placeholder="10" type="number" id="integer-input3">
+            <button style="margin-bottom: 6px;" class="popupBtn" onclick="processInputs()">Save</button>
+        </div>
+    </div>
     
+    <!--MONDAY-->
     <div id="container" onclick="expandContract('m')">
         <div id="title" style="display: flow-root;">
             <p id="titleName" class="semiBigFont">Monday</p>
@@ -19,7 +36,7 @@
         <div id="expand-container">
             <div id="expand-contract-mon" class="collapsed">
                 
-                <table id="tableMon">
+                <table id="tableMon" onclick="clickTableMon()">
                     <tr>
                       <th>Exercise</th>
                       <th>Weight</th>
@@ -77,6 +94,7 @@
         </div>
     </div>
 
+    <!--TUESDAY-->
     <div id="container" onclick="expandContract('t')">
         <div id="title" style="display: flow-root;">
             <p id="titleName" class="semiBigFont">Tuesday</p>
@@ -86,61 +104,27 @@
         <div id="expand-container">
             <div id="expand-contract-tue" class="collapsed">
                 
-                <table>
+                <table id="tableTue" onclick="clickTableTue()">
                     <tr>
-                      <th>Exercise</th>
-                      <th>Max Weight</th>
-                      <th>Sets</th>
+                        <th>Exercise</th>
+                        <th>Weight</th>
+                        <th>Sets</th>
+                        <th>Inc.</th>
                     </tr>
-
-                    <tr>
-                      <td>Romanian Deadlifts</td>
-                      <td>100kg</td>
-                      <td>5</td>
-                    </tr>
-
-                    <tr>
-                        <td>Leg Curls</td>
-                        <td>45kg</td>
-                        <td>6</td>
-                    </tr>
-
-                    <tr>
-                        <td>Shoulder Flies Machine</td>
-                        <td>56kg</td>
-                        <td>6</td>
-                    </tr>
-
-                    <tr>
-                        <td>Back Shoulder</td>
-                        <td>20kg</td>
-                        <td>4</td>
-                    </tr>
-
-                    <tr>
-                        <td>Bizeps Curls Machine</td>
-                        <td>50kg</td>
-                        <td>3</td>
-                    </tr>
-
-                    <tr>
-                        <td>Bizeps Curls</td>
-                        <td>18kg</td>
+  
+                      <tr>
+                        <td>Squats</td>
+                        <td>80kg</td>
                         <td>5</td>
-                    </tr>
-
-                    <tr>
-                        <td>Calf Raises</td>
-                        <td>150kg</td>
-                        <td>8</td>
-                    </tr>
+                        <td>20</td>
+                      </tr>
 
                   </table>
             </div>
         </div>
         
         <div id="bottom-section">
-            Max Volume: 439kg
+            Max Volume: 231kg
         </div>
     </div>
 
