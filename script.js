@@ -42,7 +42,7 @@ function calculateVolume(day){
         sum += (parseInt(e[1]) - (parseInt(e[3]) * j)) * 12;
       }
       else{
-        alert("Weight to Increment ratio to high: " + e[0]);
+        //alert("Weight to Increment ratio to high: " + e[0]);
       }
     }
   }
