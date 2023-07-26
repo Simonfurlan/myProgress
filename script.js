@@ -48,6 +48,7 @@ function calculateVolume(day){
   }
   if(sum > 0){
     document.getElementById("volume" + day).innerHTML = "Total Volume: " + sum + "kg";
+    document.getElementById("container" + day).style.backgroundImage = "linear-gradient(#FFC107, #ff9500)";
   }
   else{
     document.getElementById("volume" + day).innerHTML = "Looks like a Rest Day";
