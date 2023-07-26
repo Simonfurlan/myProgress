@@ -19,7 +19,7 @@
             <input id = "input2" style="margin-top: 6px;margin-bottom: 10px;border: none;background: #e8e8e8;" placeholder="100" type="number">
             <label style="margin-bottom: 6px;" for="integer-input2">Sets: </label>
             <input id = "input3" style="margin-top: 6px;margin-bottom: 10px;border: none;background: #e8e8e8;" placeholder="4" type="number">
-            <label style="margin-bottom: 6px;" for="integer-input3">Weight Increments (kg): </label>
+            <label style="margin-bottom: 6px;" for="integer-input3">Reps (Max Set): </label>
             <input id = "input4" style="margin-top: 6px;margin-bottom: 10px;border: none;background: #e8e8e8;" placeholder="10" type="number">
             <button style="margin-bottom: 6px;" class="popupBtn" onclick="processInputs()">Save</button>
         </div>
@@ -39,7 +39,7 @@
                       <th>Exercise</th>
                       <th>Weight</th>
                       <th>Sets</th>
-                      <th>Inc.</th>
+                      <th>Reps</th>
                     </tr>
                 </table>
                 <p id="hintMon" style="text-align: center; display: none; padding: 7px;">Add new Exercises by pressing + </p>
@@ -66,7 +66,7 @@
                         <th>Exercise</th>
                         <th>Weight</th>
                         <th>Sets</th>
-                        <th>Inc.</th>
+                        <th>Reps</th>
                     </tr>
                 </table>
                 <p id="hintTue" style="text-align: center; display: none; padding: 7px;">Add new Exercises by pressing + </p>
@@ -77,6 +77,142 @@
             <p id="volumeTue" style="padding-top: 7px;"></p>
         </div>
     </div>
+
+        <!--Wednesday-->
+        <div id="containerWed" class="container" onclick="expandContract('w')">
+            <div id="title" style="display: flow-root;">
+                <p id="titleName" class="semiBigFont">Wednesday</p>
+                <button id="btnWed" class="btnEdit" onclick="buttonWednesday()"></button>
+            </div>
+            
+            <div id="expand-container">
+                <div id="expand-contract-wed" class="collapsed">
+                    
+                    <table id="tableWed" onclick="clickTableWed()">
+                        <tr>
+                            <th>Exercise</th>
+                            <th>Weight</th>
+                            <th>Sets</th>
+                            <th>Reps</th>
+                        </tr>
+                    </table>
+                    <p id="hintWed" style="text-align: center; display: none; padding: 7px;">Add new Exercises by pressing + </p>
+                </div>
+            </div>
+            
+            <div id="bottom-section">
+                <p id="volumeWed" style="padding-top: 7px;"></p>
+            </div>
+        </div>
+    
+    <!--Thursday-->
+    <div id="containerThu" class="container" onclick="expandContract('u')">
+        <div id="title" style="display: flow-root;">
+            <p id="titleName" class="semiBigFont">Thursday</p>
+            <button id="btnThu" class="btnEdit" onclick="buttonThursday()"></button>
+        </div>
+        
+        <div id="expand-container">
+            <div id="expand-contract-thu" class="collapsed">
+                
+                <table id="tableThu" onclick="clickTableThu()">
+                    <tr>
+                        <th>Exercise</th>
+                        <th>Weight</th>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                    </tr>
+                </table>
+                <p id="hintThu" style="text-align: center; display: none; padding: 7px;">Add new Exercises by pressing + </p>
+            </div>
+        </div>
+        
+        <div id="bottom-section">
+            <p id="volumeThu" style="padding-top: 7px;"></p>
+        </div>
+    </div>
+
+    <!--Friday-->
+    <div id="containerFri" class="container" onclick="expandContract('f')">
+        <div id="title" style="display: flow-root;">
+            <p id="titleName" class="semiBigFont">Friday</p>
+            <button id="btnFri" class="btnEdit" onclick="buttonFriday()"></button>
+        </div>
+        
+        <div id="expand-container">
+            <div id="expand-contract-fri" class="collapsed">
+                
+                <table id="tableFri" onclick="clickTableFri()">
+                    <tr>
+                        <th>Exercise</th>
+                        <th>Weight</th>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                    </tr>
+                </table>
+                <p id="hintFri" style="text-align: center; display: none; padding: 7px;">Add new Exercises by pressing + </p>
+            </div>
+        </div>
+        
+        <div id="bottom-section">
+            <p id="volumeFri" style="padding-top: 7px;"></p>
+        </div>
+    </div>
+
+    <!--Saturday-->
+    <div id="containerSat" class="container" onclick="expandContract('s')">
+        <div id="title" style="display: flow-root;">
+            <p id="titleName" class="semiBigFont">Saturday</p>
+            <button id="btnSat" class="btnEdit" onclick="buttonSaturday()"></button>
+        </div>
+        
+        <div id="expand-container">
+            <div id="expand-contract-sat" class="collapsed">
+                
+                <table id="tableSat" onclick="clickTableSat()">
+                    <tr>
+                        <th>Exercise</th>
+                        <th>Weight</th>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                    </tr>
+                </table>
+                <p id="hintSat" style="text-align: center; display: none; padding: 7px;">Add new Exercises by pressing + </p>
+            </div>
+        </div>
+        
+        <div id="bottom-section">
+            <p id="volumeSat" style="padding-top: 7px;"></p>
+        </div>
+    </div>
+
+
+        <!--Sunday-->
+        <div id="containerSun" class="container" onclick="expandContract('S')">
+            <div id="title" style="display: flow-root;">
+                <p id="titleName" class="semiBigFont">Sunday</p>
+                <button id="btnSun" class="btnEdit" onclick="buttonSunday()"></button>
+            </div>
+            
+            <div id="expand-container">
+                <div id="expand-contract-sun" class="collapsed">
+                    
+                    <table id="tableSun" onclick="clickTableSun()">
+                        <tr>
+                            <th>Exercise</th>
+                            <th>Weight</th>
+                            <th>Sets</th>
+                            <th>Reps</th>
+                        </tr>
+                    </table>
+                    <p id="hintSun" style="text-align: center; display: none; padding: 7px;">Add new Exercises by pressing + </p>
+                </div>
+            </div>
+            
+            <div id="bottom-section">
+                <p id="volumeSun" style="padding-top: 7px;"></p>
+            </div>
+        </div>
 
     <script src="script.js"></script>
   </body>

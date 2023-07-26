@@ -69,6 +69,9 @@ td {
     text-align: -webkit-left;
   }
 
+
+
+
 #expand-contract-mon {
     margin-top: -200%;
     transition: all 0.5s;
@@ -89,6 +92,76 @@ td {
   }
   
 #expand-contract-tue.expanded {
+  margin: 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: white;
+  border-radius: 15px;
+  text-align: -webkit-center;
+  }
+
+#expand-contract-wed {
+    margin-top: -200%;
+    transition: all 0.5s;
+  }
+  
+#expand-contract-wed.expanded {
+  margin: 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: white;
+  border-radius: 15px;
+  text-align: -webkit-center;
+  }
+
+  #expand-contract-thu {
+    margin-top: -200%;
+    transition: all 0.5s;
+  }
+  
+#expand-contract-thu.expanded {
+  margin: 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: white;
+  border-radius: 15px;
+  text-align: -webkit-center;
+  }
+
+  #expand-contract-fri {
+    margin-top: -200%;
+    transition: all 0.5s;
+  }
+  
+#expand-contract-fri.expanded {
+  margin: 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: white;
+  border-radius: 15px;
+  text-align: -webkit-center;
+  }
+
+  #expand-contract-sat {
+    margin-top: -200%;
+    transition: all 0.5s;
+  }
+  
+#expand-contract-sat.expanded {
+  margin: 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: white;
+  border-radius: 15px;
+  text-align: -webkit-center;
+  }
+
+  #expand-contract-sun {
+    margin-top: -200%;
+    transition: all 0.5s;
+  }
+  
+#expand-contract-sun.expanded {
   margin: 0px;
   margin-top: 5px;
   margin-bottom: 5px;
