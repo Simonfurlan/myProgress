@@ -23,6 +23,7 @@ function loadStorage(){
 
     if(localStorage.getItem(tables[t] + "0") == null){
       document.getElementById(tables[t]).style.visibility = "collapse";
+      document.getElementById(tables[t]).style.display = "none";
       console.log("btn" + (tables[t].slice(5)));
       document.getElementById("btn" + (tables[t].slice(5))).className = 'btnAdd';
       document.getElementById("hint" + (tables[t].slice(5))).style.display = 'inherit';
@@ -225,6 +226,7 @@ function addToTable(table, e1, e2, e3, e4) {
 
   localStorage.setItem(table + (tb.rows.length - 2), e1 + "$" + e2 + "$" + e3 + "$" + e4);
   document.getElementById(table).style.visibility = "visible";
+  document.getElementById(table).style.display = "table";
   document.getElementById("hint" + (table.slice(5))).style.display = 'none';
   calculateVolume(table.slice(5));
 }
