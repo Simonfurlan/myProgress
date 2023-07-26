@@ -46,7 +46,7 @@ p.semiBigFont {
     padding: 15px;
     border-radius: 20px;
     background-image: linear-gradient(#c7c7cc, #aeaeb2);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     margin-bottom: 20px;
