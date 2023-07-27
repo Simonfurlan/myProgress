@@ -5,6 +5,10 @@ body, html {
     overflow: hidden; /* Hide scrollbars */
 }
 
+::-webkit-scrollbar {
+    display: none; // Safari and Chrome
+}
+
 @font-face {
     font-family: "myBold";
     src: url(SF-Pro-Display-Bold.ttf) format("truetype");
