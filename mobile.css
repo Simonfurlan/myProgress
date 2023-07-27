@@ -1,82 +1,82 @@
 body, html {
-    margin: 5px;
-    background-color: white;
-    text-align: -webkit-center;
+  margin: 5px;
+  background-color: white;
+  text-align: -webkit-center;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 @font-face {
-    font-family: "myBold";
-    src: url(SF-Pro-Display-Bold.ttf) format("truetype");
+  font-family: "myBold";
+  src: url(SF-Pro-Display-Bold.ttf) format("truetype");
 }
 
 @font-face {
-    font-family: "myNormal";
-    src: url(SF-Pro-Display-Regular.ttf) format("truetype");
+  font-family: "myNormal";
+  src: url(SF-Pro-Display-Regular.ttf) format("truetype");
 }
 
 @font-face {
-    font-family: "mySemiBold";
-    src: url(SF-Pro-Display-Semibold.ttf) format("truetype");
+  font-family: "mySemiBold";
+  src: url(SF-Pro-Display-Semibold.ttf) format("truetype");
 }
 
-p.bigFont { 
-    font-family: "myBold", Verdana, Tahoma;
-    font-size: -webkit-xxx-large;
-    margin-bottom: 30px;
-    text-align: -webkit-left;
+p.bigFont {
+  font-family: "myBold", Verdana, Tahoma;
+  font-size: -webkit-xxx-large;
+  margin-bottom: 30px;
+  text-align: -webkit-left;
 }
 
 * {
-    font-family: "myNormal", Verdana, Tahoma;
-    font-size: medium;
-    margin: 0px;
-    text-align: -webkit-left;
+  font-family: "myNormal", Verdana, Tahoma;
+  font-size: medium;
+  margin: 0px;
+  text-align: -webkit-left;
 }
 
 p.semiBigFont {
-    font-family: "mySemiBold", Verdana, Tahoma;
-    font-size: xx-large;
-    margin: 0px;
-    text-align: -webkit-left;
-    float: left;
+  font-family: "mySemiBold", Verdana, Tahoma;
+  font-size: xx-large;
+  margin: 0px;
+  text-align: -webkit-left;
+  float: left;
 }
-
 
 .container {
-    padding: 15px;
-    border-radius: 20px;
-    background-image: linear-gradient(#c7c7cc, #aeaeb2);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    margin-bottom: 20px;
-    max-width: 500px;
+  padding: 15px;
+  border-radius: 20px;
+  background-image: linear-gradient(#c7c7cc, #aeaeb2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  margin-bottom: 20px;
+  max-width: 500px;
 }
- 
+
 #expand-container {
-   overflow: hidden;
- }
+  overflow: hidden;
+}
 
 th {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: -webkit-left;
-  }
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: -webkit-left;
+}
 
 td {
-    padding-top: 0px;
-    padding-bottom: 0px;
-    text-align: -webkit-left;
-  }
-
-
-
+  padding-top: 0px;
+  padding-bottom: 0px;
+  text-align: -webkit-left;
+}
 
 #expand-contract-mon {
-    margin-top: -200%;
-    transition: all 0.5s;
-  }
-  
+  margin-top: -200%;
+  transition: all 0.5s;
+}
+
 #expand-contract-mon.expanded {
   margin: 0px;
   margin-top: 5px;
@@ -84,13 +84,13 @@ td {
   background-color: white;
   border-radius: 15px;
   text-align: -webkit-center;
-  }
+}
 
 #expand-contract-tue {
-    margin-top: -200%;
-    transition: all 0.5s;
-  }
-  
+  margin-top: -200%;
+  transition: all 0.5s;
+}
+
 #expand-contract-tue.expanded {
   margin: 0px;
   margin-top: 5px;
@@ -98,13 +98,13 @@ td {
   background-color: white;
   border-radius: 15px;
   text-align: -webkit-center;
-  }
+}
 
 #expand-contract-wed {
-    margin-top: -200%;
-    transition: all 0.5s;
-  }
-  
+  margin-top: -200%;
+  transition: all 0.5s;
+}
+
 #expand-contract-wed.expanded {
   margin: 0px;
   margin-top: 5px;
@@ -112,13 +112,13 @@ td {
   background-color: white;
   border-radius: 15px;
   text-align: -webkit-center;
-  }
+}
 
-  #expand-contract-thu {
-    margin-top: -200%;
-    transition: all 0.5s;
-  }
-  
+#expand-contract-thu {
+  margin-top: -200%;
+  transition: all 0.5s;
+}
+
 #expand-contract-thu.expanded {
   margin: 0px;
   margin-top: 5px;
@@ -126,13 +126,13 @@ td {
   background-color: white;
   border-radius: 15px;
   text-align: -webkit-center;
-  }
+}
 
-  #expand-contract-fri {
-    margin-top: -200%;
-    transition: all 0.5s;
-  }
-  
+#expand-contract-fri {
+  margin-top: -200%;
+  transition: all 0.5s;
+}
+
 #expand-contract-fri.expanded {
   margin: 0px;
   margin-top: 5px;
@@ -140,13 +140,13 @@ td {
   background-color: white;
   border-radius: 15px;
   text-align: -webkit-center;
-  }
+}
 
-  #expand-contract-sat {
-    margin-top: -200%;
-    transition: all 0.5s;
-  }
-  
+#expand-contract-sat {
+  margin-top: -200%;
+  transition: all 0.5s;
+}
+
 #expand-contract-sat.expanded {
   margin: 0px;
   margin-top: 5px;
@@ -154,13 +154,13 @@ td {
   background-color: white;
   border-radius: 15px;
   text-align: -webkit-center;
-  }
+}
 
-  #expand-contract-sun {
-    margin-top: -200%;
-    transition: all 0.5s;
-  }
-  
+#expand-contract-sun {
+  margin-top: -200%;
+  transition: all 0.5s;
+}
+
 #expand-contract-sun.expanded {
   margin: 0px;
   margin-top: 5px;
@@ -168,16 +168,16 @@ td {
   background-color: white;
   border-radius: 15px;
   text-align: -webkit-center;
-  }
+}
 
 table {
-    display: table;
-    border-collapse: separate;
-    box-sizing: border-box;
-    width: -webkit-fill-available;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 5px;
+  display: table;
+  border-collapse: separate;
+  box-sizing: border-box;
+  width: -webkit-fill-available;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
 }
 
 .btnAdd {
@@ -219,7 +219,7 @@ table {
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  z-index: 1; 
+  z-index: 1;
 }
 
 .popup-content {
