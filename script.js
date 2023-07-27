@@ -2,6 +2,17 @@ let selectedDay = null;
 let selectedIndex = -1;
 
 loadStorage()
+darkmode()
+
+function darkmode(){
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.body.style.backgroundColor = "#333333";
+    document.documentElement.style.backgroundColor = "#333333";
+    document.getElementById("titleText").style.color = "white";
+  }
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+    const newColorScheme = event.matches ? "dark" : "light"; });
+}
 
 function buttonMonday() {
   const btnMon = document.getElementById("btnMon");
@@ -418,15 +429,27 @@ function processInputs() {
 
 function calculateVolume(day){
   let sum = 0;
+  let currentDay = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
   for (let i = 0; localStorage.getItem("table"+ day + i) != null; i++) {
     e = localStorage.getItem("table"+ day + i).split('$');
     sum += (parseInt(e[1]) * (parseInt(e[3])));
   }
   if(sum > 0){
     document.getElementById("volume" + day).innerHTML = "Max Set Volume: " + sum + "kg";
-    document.getElementById("container" + day).style.backgroundImage = "linear-gradient(#ffd60a, #ffcc00)";
+    
+    if(currentDay[new Date().getDay()] == day){
+      expandContractAuto(day);
+      document.getElementById("container" + day).style.backgroundImage = "linear-gradient(#66d4cf, #00c7bd)";
+    }
+    else {
+      document.getElementById("container" + day).style.backgroundImage = "linear-gradient(#ffd60a, #ffcc00)";
+    }
   }
   else{
+    if(currentDay[new Date().getDay()] == day){
+      document.getElementById("container" + day).style.backgroundImage = "linear-gradient(#04de71, #02d46b)";
+    }
     document.getElementById("volume" + day).innerHTML = "Looks like a Rest Day";
   }
 }
@@ -434,7 +457,7 @@ function calculateVolume(day){
 function expandContract(day) {
   if(event.target.id == "container" || event.target.id == "bottom-section" || event.target.id == "title" || event.target.id == "titleName"){
     switch(day) {
-            case 'm':
+            case "Mon":
                 const mon = document.getElementById("expand-contract-mon")
                 const btnMon = document.getElementById("btnMon")
                 mon.classList.toggle('expanded')
@@ -457,7 +480,7 @@ function expandContract(day) {
                 
               break;
 
-            case 't':
+            case "Tue":
                 const tue = document.getElementById("expand-contract-tue")
                 const btnTue = document.getElementById("btnTue")
                 tue.classList.toggle('expanded')
@@ -479,7 +502,7 @@ function expandContract(day) {
                 }
               break;
 
-              case 'w':
+              case "Wed":
                 const wed = document.getElementById("expand-contract-wed")
                 const btnWed = document.getElementById("btnWed")
                 wed.classList.toggle('expanded')
@@ -501,7 +524,7 @@ function expandContract(day) {
                 }
               break;
 
-              case 'u':
+              case "Thu":
                 const thu = document.getElementById("expand-contract-thu")
                 const btnThu = document.getElementById("btnThu")
                 thu.classList.toggle('expanded')
@@ -523,7 +546,7 @@ function expandContract(day) {
                 }
               break;
 
-              case 'f':
+              case "Fri":
                 const fri = document.getElementById("expand-contract-fri")
                 const btnFri = document.getElementById("btnFri")
                 fri.classList.toggle('expanded')
@@ -545,7 +568,7 @@ function expandContract(day) {
                 }
               break;
 
-              case 's':
+              case "Sat":
                 const sat = document.getElementById("expand-contract-sat")
                 const btnSat = document.getElementById("btnSat")
                 sat.classList.toggle('expanded')
@@ -567,7 +590,7 @@ function expandContract(day) {
                 }
               break;
 
-              case 'S':
+              case "Sun":
                 const sun = document.getElementById("expand-contract-sun")
                 const btnSun = document.getElementById("btnSun")
                 sun.classList.toggle('expanded')
@@ -595,6 +618,168 @@ function expandContract(day) {
   }
 }
 
+function expandContractAuto(day) {
+    switch(day) {
+            case "Mon":
+                const mon = document.getElementById("expand-contract-mon")
+                const btnMon = document.getElementById("btnMon")
+                mon.classList.toggle('expanded')
+                mon.classList.toggle('collapsed')
+                
+                if(mon.classList.contains('expanded')){
+                    btnMon.style.visibility = "visible";
+                    btnMon.style.opacity = 1;
+                    btnMon.style.transition = "opacity 0.25s linear";
+
+                    if(localStorage.getItem("tableMon0") == null){
+                      document.getElementById("btnMon").className = 'btnAdd';
+                    }
+                }
+                else{
+                  btnMon.style.visibility = "hidden";
+                  btnMon.style.opacity = 0;
+                  btnMon.className = "btnEdit";
+                }
+                
+              break;
+
+            case "Tue":
+                const tue = document.getElementById("expand-contract-tue")
+                const btnTue = document.getElementById("btnTue")
+                tue.classList.toggle('expanded')
+                tue.classList.toggle('collapsed')
+
+                if(tue.classList.contains('expanded')){
+                  btnTue.style.visibility = "visible";
+                  btnTue.style.opacity = 1;
+                  btnTue.style.transition = "opacity 0.25s linear";
+
+                  if(localStorage.getItem("tableTue0") == null){
+                    document.getElementById("btnTue").className = 'btnAdd';
+                  }
+                }
+                else{
+                  btnTue.style.visibility = "hidden";
+                  btnTue.style.opacity = 0;
+                  btnTue.className = "btnEdit";
+                }
+              break;
+
+              case "Wed":
+                const wed = document.getElementById("expand-contract-wed")
+                const btnWed = document.getElementById("btnWed")
+                wed.classList.toggle('expanded')
+                wed.classList.toggle('collapsed')
+
+                if(wed.classList.contains('expanded')){
+                  btnWed.style.visibility = "visible";
+                  btnWed.style.opacity = 1;
+                  btnWed.style.transition = "opacity 0.25s linear";
+
+                  if(localStorage.getItem("tableWed0") == null){
+                    document.getElementById("btnWed").className = 'btnAdd';
+                  }
+                }
+                else{
+                  btnWed.style.visibility = "hidden";
+                  btnWed.style.opacity = 0;
+                  btnWed.className = "btnEdit";
+                }
+              break;
+
+              case "Thu":
+                const thu = document.getElementById("expand-contract-thu")
+                const btnThu = document.getElementById("btnThu")
+                thu.classList.toggle('expanded')
+                thu.classList.toggle('collapsed')
+
+                if(thu.classList.contains('expanded')){
+                  btnThu.style.visibility = "visible";
+                  btnThu.style.opacity = 1;
+                  btnThu.style.transition = "opacity 0.25s linear";
+
+                  if(localStorage.getItem("tableThu0") == null){
+                    document.getElementById("btnThu").className = 'btnAdd';
+                  }
+                }
+                else{
+                  btnThu.style.visibility = "hidden";
+                  btnThu.style.opacity = 0;
+                  btnThu.className = "btnEdit";
+                }
+              break;
+
+              case "Fri":
+                const fri = document.getElementById("expand-contract-fri")
+                const btnFri = document.getElementById("btnFri")
+                fri.classList.toggle('expanded')
+                fri.classList.toggle('collapsed')
+
+                if(fri.classList.contains('expanded')){
+                  btnFri.style.visibility = "visible";
+                  btnFri.style.opacity = 1;
+                  btnFri.style.transition = "opacity 0.25s linear";
+
+                  if(localStorage.getItem("tableFri0") == null){
+                    document.getElementById("btnFri").className = 'btnAdd';
+                  }
+                }
+                else{
+                  btnFri.style.visibility = "hidden";
+                  btnFri.style.opacity = 0;
+                  btnFri.className = "btnEdit";
+                }
+              break;
+
+              case "Sat":
+                const sat = document.getElementById("expand-contract-sat")
+                const btnSat = document.getElementById("btnSat")
+                sat.classList.toggle('expanded')
+                sat.classList.toggle('collapsed')
+
+                if(sat.classList.contains('expanded')){
+                  btnSat.style.visibility = "visible";
+                  btnSat.style.opacity = 1;
+                  btnSat.style.transition = "opacity 0.25s linear";
+
+                  if(localStorage.getItem("tableSat0") == null){
+                    document.getElementById("btnSat").className = 'btnAdd';
+                  }
+                }
+                else{
+                  btnSat.style.visibility = "hidden";
+                  btnSat.style.opacity = 0;
+                  btnSat.className = "btnEdit";
+                }
+              break;
+
+              case "Sun":
+                const sun = document.getElementById("expand-contract-sun")
+                const btnSun = document.getElementById("btnSun")
+                sun.classList.toggle('expanded')
+                sun.classList.toggle('collapsed')
+
+                if(sun.classList.contains('expanded')){
+                  btnSun.style.visibility = "visible";
+                  btnSun.style.opacity = 1;
+                  btnSun.style.transition = "opacity 0.25s linear";
+
+                  if(localStorage.getItem("tableSun0") == null){
+                    document.getElementById("btnSun").className = 'btnAdd';
+                  }
+                }
+                else{
+                  btnSun.style.visibility = "hidden";
+                  btnSun.style.opacity = 0;
+                  btnSun.className = "btnEdit";
+                }
+              break;
+
+            default:
+              alert("Error identifying Day")
+      }
+}
+
 function loadStorage(){
   tables = ["tableMon", "tableTue", "tableWed", "tableThu", "tableFri", "tableSat", "tableSun"]
 
@@ -616,7 +801,6 @@ function loadStorage(){
     if(localStorage.getItem(tables[t] + "0") == null){
       document.getElementById(tables[t]).style.visibility = "collapse";
       document.getElementById(tables[t]).style.display = "none";
-      console.log("btn" + (tables[t].slice(5)));
       document.getElementById("btn" + (tables[t].slice(5))).className = 'btnAdd';
       document.getElementById("hint" + (tables[t].slice(5))).style.display = 'inherit';
     }
