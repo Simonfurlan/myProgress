@@ -8,6 +8,7 @@
    </head>
    <body>
       <p id="titleText" class="bigFont">MyProgress</p>
+
       <div class="popup" id="popup">
          <div class="popup-content">
             <span class="close" onclick="closePopup()">&times;</span>
@@ -191,6 +192,13 @@
          </div>
       </div>
       
+      <div style="width: 80px; align-self: center;">
+        <button class="btnDownload" onclick="exportLocalStorageToJSON('MyProgress.json');"></button>
+
+        <!-- Input element to choose the JSON file -->
+        <input class="btnUpload" type="file" id="fileInput" />
+      </div>
+
       <script src="script.js"></script>
    </body>
 </html>

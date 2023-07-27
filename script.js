@@ -813,3 +813,69 @@ function loadStorage(){
   calculateVolume("Sat");
   calculateVolume("Sun");
 }
+
+
+// import/export JSON
+
+function exportLocalStorageToJSON(filename) {
+  // Retrieve all entries from localStorage
+  const localStorageData = {};
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    localStorageData[key] = localStorage.getItem(key);
+  }
+
+  // Convert data to JSON format
+  const jsonData = JSON.stringify(localStorageData, null, 2);
+
+  // Create a Blob with the JSON data
+  const blob = new Blob([jsonData], { type: "application/json" });
+
+  // Create a link element to trigger the download
+  const downloadLink = document.createElement("a");
+  downloadLink.download = filename || "localStorageData.json";
+  downloadLink.href = URL.createObjectURL(blob);
+  downloadLink.click();
+
+  // Clean up the URL object to free up resources
+  URL.revokeObjectURL(downloadLink.href);
+}
+
+// Attach event listener to the file input element
+document.getElementById("fileInput").addEventListener("change", importJSON);
+
+function importJSON(event) {
+  const fileInput = event.target;
+
+  if (!fileInput || !fileInput.files || fileInput.files.length === 0) {
+    alert("Please choose a valid JSON file.");
+    return;
+  }
+
+  const file = fileInput.files[0];
+  const reader = new FileReader();
+
+  reader.onload = function(event) {
+    try {
+      const jsonData = JSON.parse(event.target.result);
+
+      // Clear existing localStorage entries
+      localStorage.clear();
+
+      // Load the JSON data into localStorage
+      for (const key in jsonData) {
+        if (jsonData.hasOwnProperty(key)) {
+          localStorage.setItem(key, jsonData[key]);
+        }
+      }
+
+      alert("Progress data successfully imported.");
+      location.reload();
+    } catch (error) {
+      alert("Error parsing JSON file. Please make sure the file contains valid data.");
+      console.error(error);
+    }
+  };
+
+  reader.readAsText(file);
+}
