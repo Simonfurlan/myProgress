@@ -623,4 +623,9 @@ function loadStorage(){
   }
   calculateVolume("Mon");
   calculateVolume("Tue");
+  calculateVolume("Wed");
+  calculateVolume("Thu");
+  calculateVolume("Fri");
+  calculateVolume("Sat");
+  calculateVolume("Sun");
 }
