@@ -2,11 +2,6 @@ body, html {
     margin: 5px;
     background-color: white;
     text-align: -webkit-center;
-    overflow: hidden; /* Hide scrollbars */
-}
-
-::-webkit-scrollbar {
-    display: none; // Safari and Chrome
 }
 
 body::-webkit-scrollbar{
