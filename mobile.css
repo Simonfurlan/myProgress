@@ -4,10 +4,6 @@ body, html {
   text-align: -webkit-center;
 }
 
-body::-webkit-scrollbar {
-  display: none;
-}
-
 @font-face {
   font-family: "myBold";
   src: url(SF-Pro-Display-Bold.ttf) format("truetype");
