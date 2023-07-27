@@ -9,7 +9,20 @@
    <body>
       <div style="display: flow-root;">
          <p id="titleText" style="float: left;" class="bigFont">MyProgress</p>
-         <button id="Settings" class="btnSetLight"></button>
+         <button id="Settings" class="btnSetLight" onclick="btnSettings()"></button>
+
+         <div id="InExportDiv" style="padding-right: 35px; opacity: 0; padding-top: 15px; height: 32px; border-radius: 20px; float: right;">
+            <button id="btnDownload" class="btnDownload" onclick="exportLocalStorageToJSON('MyProgress.json');"></button>
+    
+            <!-- Input element to choose the JSON file -->
+             
+    
+             <span class="hiddenFileInput">
+                <input type="file" id="fileInput">
+             </span>
+    
+         </div>
+
       </div>
 
       <div class="popup" id="popup">
@@ -193,18 +206,6 @@
          <div id="bottom-section">
             <p id="volumeSun" style="padding-top: 7px;"></p>
          </div>
-      </div>
-      
-      <div style="width: 80px; align-self: center;">
-        <button class="btnDownload" onclick="exportLocalStorageToJSON('MyProgress.json');"></button>
-
-        <!-- Input element to choose the JSON file -->
-         
-
-         <span class="hiddenFileInput">
-            <input type="file" id="fileInput">
-         </span>
-
       </div>
 
       <script src="script.js"></script>

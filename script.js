@@ -4,6 +4,56 @@ let selectedIndex = -1;
 loadStorage()
 //darkmode()
 
+function btnSettings() {
+  const btnSet = document.getElementById('Settings');
+  const ieDiv = document.getElementById('InExportDiv');
+  var div = document.getElementById('btnDownload');
+
+  btnSet.style.display = "none";
+  ieDiv.style.visibility = "visible";
+  ieDiv.style.opacity = 1;
+  ieDiv.style.transition = "opacity 0.25s linear";
+  
+  var initialMargin = -32;
+  var targetMargin = 12;
+  div.style.marginRight = initialMargin + "px";
+  div.style.transition = "margin-right 0.25s linear";
+  setTimeout(function() {
+    div.style.marginRight = targetMargin + "px";
+  }, 10);
+
+  setTimeout(function() {reverseBtnSet()}, 5000);
+
+}
+
+function reverseBtnSet(){
+  const btnSet = document.getElementById('Settings');
+  const ieDiv = document.getElementById('InExportDiv');
+  var div = document.getElementById('btnDownload');
+
+  var initialMargin = 12;
+  var targetMargin = -32;
+  div.style.marginRight = initialMargin + "px";
+  div.style.transition = "margin-right 0.25s linear";
+  setTimeout(function() {
+    div.style.marginRight = targetMargin + "px";
+  }, 10);
+
+  ieDiv.style.transition = "opacity 0.25s linear";
+  
+
+  setTimeout(function() {
+    ieDiv.style.opacity = 0;
+  }, 10);
+  
+  setTimeout(function() {
+    btnSet.style.display = "block";
+    ieDiv.style.visibility = "hidden";
+  }, 250);
+  
+
+}
+
 function darkmode(){
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     document.body.style.backgroundColor = "black";
