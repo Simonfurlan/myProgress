@@ -828,17 +828,14 @@ function exportLocalStorageToJSON(filename) {
   // Convert data to JSON format
   const jsonData = JSON.stringify(localStorageData, null, 2);
 
-  // Create a Blob with the JSON data
-  const blob = new Blob([jsonData], { type: "application/json" });
+  // Create the data URI for the JSON content
+  const dataURI = "data:application/json;charset=utf-8," + encodeURIComponent(jsonData);
 
   // Create a link element to trigger the download
   const downloadLink = document.createElement("a");
   downloadLink.download = filename || "localStorageData.json";
-  downloadLink.href = URL.createObjectURL(blob);
+  downloadLink.href = dataURI;
   downloadLink.click();
-
-  // Clean up the URL object to free up resources
-  URL.revokeObjectURL(downloadLink.href);
 }
 
 // Attach event listener to the file input element

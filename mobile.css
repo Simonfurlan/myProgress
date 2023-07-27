@@ -231,6 +231,13 @@ table {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
 
+/* Hide the file input button for devices with a maximum width of 767px (typical for mobile devices) */
+@media (max-width: 767px) {
+  input[type="file"] {
+    font-size: 0;
+  }
+}
+
 /* Styles for the popup */
 .popup {
   display: none;
