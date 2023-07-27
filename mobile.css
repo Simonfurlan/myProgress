@@ -4,6 +4,22 @@ body, html {
     text-align: -webkit-center;
 }
 
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    body::-webkit-scrollbar {
+      width: 0.5em;
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background-color: #ccc;
+      border-radius: 0.5em;
+    }
+
+    body::-webkit-scrollbar-thumb:hover {
+      background-color: #aaa;
+    }
+  }
+}
 
 /* Add this CSS to hide the scrollbar */
 body {
