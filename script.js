@@ -2,13 +2,14 @@ let selectedDay = null;
 let selectedIndex = -1;
 
 loadStorage()
-darkmode()
+//darkmode()
 
 function darkmode(){
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     document.body.style.backgroundColor = "black";
     document.documentElement.style.backgroundColor = "black";
     document.getElementById("titleText").style.color = "white";
+    document.getElementById("Settings").className = "btnSetDark";
   }
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
     const newColorScheme = event.matches ? "dark" : "light"; });
