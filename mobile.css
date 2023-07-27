@@ -9,6 +9,10 @@ body, html {
     display: none; // Safari and Chrome
 }
 
+body::-webkit-scrollbar{
+  display: none;
+}
+
 @font-face {
     font-family: "myBold";
     src: url(SF-Pro-Display-Bold.ttf) format("truetype");
