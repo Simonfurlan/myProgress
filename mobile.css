@@ -5,6 +5,11 @@ body, html {
     scrollbar-width: none;
 }
 
+body::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
 @font-face {
     font-family: "myBold";
     src: url(SF-Pro-Display-Bold.ttf) format("truetype");
