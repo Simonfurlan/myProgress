@@ -2,10 +2,7 @@ body, html {
     margin: 5px;
     background-color: white;
     text-align: -webkit-center;
-}
-
-body::-webkit-scrollbar{
-  visibility: hidden;
+    scrollbar-width: none;
 }
 
 @font-face {
