@@ -4,12 +4,18 @@ body, html {
     text-align: -webkit-center;
 }
 
+
+/* Add this CSS to hide the scrollbar */
 body {
-    overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; /* Enables momentum scrolling in iOS */
+  overflow-y: scroll; /* Always show a scrollbar, even if there is no content to scroll */
+  scrollbar-width: none; /* Hide the scrollbar for other browsers that support it */
+  -ms-overflow-style: none; /* Hide the scrollbar for Internet Explorer and Edge */
 }
 
-body::-webkit-scrollbar {
-    display: none;
+/* For WebKit-based browsers (e.g., Safari) */
+::-webkit-scrollbar {
+  display: none;
 }
 
 @font-face {
