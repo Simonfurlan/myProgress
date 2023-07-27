@@ -6,8 +6,8 @@ darkmode()
 
 function darkmode(){
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.body.style.backgroundColor = "#333333";
-    document.documentElement.style.backgroundColor = "#333333";
+    document.body.style.backgroundColor = "black";
+    document.documentElement.style.backgroundColor = "black";
     document.getElementById("titleText").style.color = "white";
   }
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
