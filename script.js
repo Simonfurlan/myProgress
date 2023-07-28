@@ -495,6 +495,7 @@ function processInputs() {
 function calculateVolume(day){
   let sum = 0;
   let currentDay = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  dayContainer = document.getElementById("container" + day);
 
   for (let i = 0; localStorage.getItem("table"+ day + i) != null; i++) {
     e = localStorage.getItem("table"+ day + i).split('$');
@@ -505,15 +506,18 @@ function calculateVolume(day){
     
     if(currentDay[new Date().getDay()] == day){
       expandContractAuto(day);
-      document.getElementById("container" + day).style.backgroundImage = "linear-gradient(#66d4cf, #00c7bd)";
+      dayContainer.style.backgroundImage = "linear-gradient(#66d4cf, #00c7bd)";
     }
     else {
-      document.getElementById("container" + day).style.backgroundImage = "linear-gradient(#ffd60a, #ffcc00)";
+      dayContainer.style.backgroundImage = "linear-gradient(#ffd60a, #ffcc00)";
     }
   }
   else{
     if(currentDay[new Date().getDay()] == day){
-      document.getElementById("container" + day).style.backgroundImage = "linear-gradient(#04de71, #02d46b)";
+      dayContainer.style.backgroundImage = "linear-gradient(#04de71, #02d46b)";
+    }
+    else{
+      dayContainer.style.backgroundImage = "linear-gradient(#c7c7cc, #aeaeb2)";
     }
     document.getElementById("volume" + day).innerHTML = "Looks like a Rest Day";
   }
@@ -880,12 +884,69 @@ function loadStorage(){
 }
 
 function deleteItem() {
-  console.log("table" + selectedDay + selectedIndex)
   localStorage.removeItem("table" + selectedDay + (selectedIndex-1));
   document.getElementById("table" + selectedDay).deleteRow(selectedIndex);
+
+
   closePopup();
+
+  elements = getEntriesWithPrefix("table" + selectedDay);  
+  deleteEntriesWithPrefix("table" + selectedDay);
+
+  for (let i = 0; i < elements.length; i++) {
+    localStorage.setItem("table" + selectedDay + i, elements[i].value);
+  }
+  
+  document.getElementById("btn" + selectedDay).className = "btnEdit";
+  if(getTableRowCount("table" + selectedDay) <= 1){
+    location.reload();
+  }
 }
 
+function getEntriesWithPrefix(prefix) {
+  const matchingEntries = [];
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (key.startsWith(prefix)) {
+      const value = localStorage.getItem(key);
+      matchingEntries.push({ key, value });
+    }
+  }
+  
+  matchingEntries.sort((a, b) => a.key.localeCompare(b.key));
+  
+  return matchingEntries;
+}
+
+function deleteEntriesWithPrefix(prefix) {
+  const keysToDelete = [];
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (key.startsWith(prefix)) {
+      keysToDelete.push(key);
+    }
+  }
+
+  keysToDelete.forEach((key) => {
+    localStorage.removeItem(key);
+  });
+}
+
+function getTableRowCount(tableId) {
+  const table = document.getElementById(tableId);
+  if (!table) {
+    console.error("Tabelle mit der ID '" + tableId + "' nicht gefunden.");
+    return 0;
+  }
+
+  const tbody = table.querySelector("tbody");
+  if (!tbody) {
+    console.error("Tabelle hat kein tbody-Element.");
+    return 0;
+  }
+
+  return tbody.rows.length;
+}
 
 // import/export JSON
 
@@ -930,6 +991,7 @@ function importJSON(event) {
 
       // Clear existing localStorage entries
       localStorage.clear();
+      deleteEntriesWithPrefix("table");
 
       // Load the JSON data into localStorage
       for (const key in jsonData) {
