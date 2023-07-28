@@ -214,6 +214,9 @@ table {
   background-position: center;
   border: none;
   border-radius: 50px;
+
+  position: absolute;
+  right: 12px;
 }
 
 .btnSetDark {
@@ -226,6 +229,9 @@ table {
   background-position: center;
   border: none;
   border-radius: 50px;
+
+  position: absolute;
+  right: 12px;
 }
 
 .btnDownload {
@@ -318,8 +324,8 @@ table {
   border: none;
   border-radius: 6px;
   height: 30px;
+  width: 75%;
   color: white;
-  width: 134px;
   margin-right: 8px;
   text-align: -webkit-center;
 }

@@ -11,7 +11,7 @@
          <p id="titleText" style="float: left;" class="bigFont">MyProgress</p>
          <button id="Settings" class="btnSetLight" onclick="btnSettings()"></button>
 
-         <div id="InExportDiv" style=" z-index: 3; position: inherit; border: solid; border-color: black; padding-right: 35px; opacity: 0; margin-top: 12px; height: 32px; border-radius: 20px; float: right;">
+         <div id="InExportDiv" style=" z-index: 3; visibility: hidden; position: inherit; border: solid; border-color: black; padding-right: 35px; opacity: 0; margin-top: 12px; height: 32px; border-radius: 20px; float: right;">
             <button id="btnDownload" class="btnDownload" onclick="exportLocalStorageToJSON('MyProgress.json');"></button>
     
             <!-- Input element to choose the JSON file -->
@@ -36,8 +36,10 @@
             <input id = "input3" style="margin-top: 6px;margin-bottom: 10px;border: none;background: #e8e8e8;" placeholder="4" type="number">
             <label style="margin-bottom: 6px;" for="integer-input3">Reps (Max Set): </label>
             <input id = "input4" style="margin-top: 6px;margin-bottom: 10px;border: none;background: #e8e8e8;" placeholder="10" type="number">
+            <div style="height: 30px;">
             <button id = "btnSave" class="popupBtn" onclick="processInputs()">Save</button>
-            <button id = "btnDel" style="margin-top: 6px; border: none; left: 74px; display: none; background: url(delete-icon.png) no-repeat; background-size: 27px; height: 32px; width: 32px;" onclick="deleteItem()"></button>
+            <button id = "btnDel" style="margin-top: 6px; border: none; float: right; display: none; background: url(delete-icon.png) no-repeat; background-size: 27px; height: 32px; width: 32px;" onclick="deleteItem()"></button>
+            </div>
          </div>
       </div>
 

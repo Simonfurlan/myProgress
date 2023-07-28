@@ -15,7 +15,7 @@ function btnSettings() {
   ieDiv.style.transition = "opacity 0.25s linear";
   
   var initialMargin = -32;
-  var targetMargin = 12;
+  var targetMargin = 15;
   div.style.marginRight = initialMargin + "px";
   div.style.transition = "margin-right 0.25s linear";
   setTimeout(function() {
@@ -31,8 +31,8 @@ function reverseBtnSet(){
   const ieDiv = document.getElementById('InExportDiv');
   var div = document.getElementById('btnDownload');
 
-  var initialMargin = 12;
-  var targetMargin = -32;
+  var initialMargin = 15;
+  var targetMargin = -31;
   div.style.marginRight = initialMargin + "px";
   div.style.transition = "margin-right 0.15s linear";
   setTimeout(function() {
