@@ -61,8 +61,6 @@ function darkmode(){
     document.getElementById("Settings").className = "btnSetDark";
     document.getElementById('InExportDiv').style.borderColor = "white";
   }
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-    const newColorScheme = event.matches ? "dark" : "light"; });
 }
 
 function buttonMonday() {
