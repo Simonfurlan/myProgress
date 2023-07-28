@@ -205,26 +205,24 @@ table {
 }
 
 .btnSetLight {
-  scale: 1.5;
-  padding-top: 58px;
-  width: 32px;
-  height: 32px;
+  padding-top: 66px;
+  width: 35px;
+  height: 35px;
   float: right;
   background: url(SetLight.png) no-repeat;
-  background-size: 20px;
+  background-size: 35px;
   background-position: center;
   border: none;
   border-radius: 50px;
 }
 
 .btnSetDark {
-  scale: 1.5;
-  padding-top: 58px;
-  width: 32px;
-  height: 32px;
+  padding-top: 66px;
+  width: 35px;
+  height: 35px;
   float: right;
   background: url(SetDark.png) no-repeat;
-  background-size: 20px;
+  background-size: 35px;
   background-position: center;
   border: none;
   border-radius: 50px;
@@ -235,7 +233,7 @@ table {
   height: 32px;
   background: url(download-icon.png) no-repeat;
   background-size: 30px;
-  background-position: center;
+  margin-left: 4px;
   border: none;
   background-color: transparent;
   border-radius: 50px;
@@ -249,13 +247,13 @@ table {
   opacity: 0;
   cursor: pointer;
 }
+
 .hiddenFileInput{
   position: absolute;
   width: 32px;
   height: 32px;
   background: url(upload-icon.png) no-repeat;
   background-size: 30px;
-  background-position: center;
   border: none;
   background-color: transparent;
   border-radius: 50px;

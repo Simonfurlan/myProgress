@@ -2,7 +2,7 @@ let selectedDay = null;
 let selectedIndex = -1;
 
 loadStorage()
-//darkmode()
+darkmode()
 
 function btnSettings() {
   const btnSet = document.getElementById('Settings');
@@ -34,7 +34,7 @@ function reverseBtnSet(){
   var initialMargin = 12;
   var targetMargin = -32;
   div.style.marginRight = initialMargin + "px";
-  div.style.transition = "margin-right 0.25s linear";
+  div.style.transition = "margin-right 0.15s linear";
   setTimeout(function() {
     div.style.marginRight = targetMargin + "px";
   }, 10);
@@ -49,8 +49,7 @@ function reverseBtnSet(){
   setTimeout(function() {
     btnSet.style.display = "block";
     ieDiv.style.visibility = "hidden";
-  }, 250);
-  
+  }, 150);
 
 }
 
@@ -60,6 +59,7 @@ function darkmode(){
     document.documentElement.style.backgroundColor = "black";
     document.getElementById("titleText").style.color = "white";
     document.getElementById("Settings").className = "btnSetDark";
+    document.getElementById('InExportDiv').style.borderColor = "white";
   }
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
     const newColorScheme = event.matches ? "dark" : "light"; });
