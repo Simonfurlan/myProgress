@@ -196,7 +196,7 @@ function clickTableMon(){
     let index = event.target.parentNode.rowIndex;
     selectedIndex = index;
     selectedDay = "Mon";
-    showPopup();
+    showPopupEdit();
 
     const tableMon = document.getElementById("tableMon");
     const input1 = document.getElementById("input1");
@@ -227,7 +227,7 @@ function clickTableTue(){
     let index = event.target.parentNode.rowIndex;
     selectedIndex = index;
     selectedDay = "Tue";
-    showPopup();
+    showPopupEdit();
 
     const tableTue = document.getElementById("tableTue");
     const input1 = document.getElementById("input1");
@@ -258,7 +258,7 @@ function clickTableWed(){
     let index = event.target.parentNode.rowIndex;
     selectedIndex = index;
     selectedDay = "Wed";
-    showPopup();
+    showPopupEdit();
 
     const tableWed = document.getElementById("tableWed");
     const input1 = document.getElementById("input1");
@@ -289,7 +289,7 @@ function clickTableThu(){
     let index = event.target.parentNode.rowIndex;
     selectedIndex = index;
     selectedDay = "Thu";
-    showPopup();
+    showPopupEdit();
 
     const tableThu = document.getElementById("tableThu");
     const input1 = document.getElementById("input1");
@@ -320,7 +320,7 @@ function clickTableFri(){
     let index = event.target.parentNode.rowIndex;
     selectedIndex = index;
     selectedDay = "Fri";
-    showPopup();
+    showPopupEdit();
 
     const tableFri = document.getElementById("tableFri");
     const input1 = document.getElementById("input1");
@@ -351,7 +351,7 @@ function clickTableSat(){
     let index = event.target.parentNode.rowIndex;
     selectedIndex = index;
     selectedDay = "Sat";
-    showPopup();
+    showPopupEdit();
 
     const tableSat = document.getElementById("tableSat");
     const input1 = document.getElementById("input1");
@@ -382,7 +382,7 @@ function clickTableSun(){
     let index = event.target.parentNode.rowIndex;
     selectedIndex = index;
     selectedDay = "Sun";
-    showPopup();
+    showPopupEdit();
 
     const tableSun = document.getElementById("tableSun");
     const input1 = document.getElementById("input1");
@@ -455,9 +455,25 @@ function showPopup() {
   popup.style.display = 'block';
 }
 
+function showPopupEdit() {
+  var popup = document.getElementById('popup');
+  var btnSave = document.getElementById('btnSave');
+  var btnDel = document.getElementById('btnDel');
+
+  popup.style.display = 'block';
+  btnSave.className = "popupBtnDel";
+  btnDel.style.display = "block";
+}
+
 function closePopup() {
   var popup = document.getElementById('popup');
+  var btnSave = document.getElementById('btnSave');
+  var btnDel = document.getElementById('btnDel');
+
   popup.style.display = 'none';
+  btnSave.className = "popupBtn";
+  btnDel.style.display = "none";
+  
 }
 
 function processInputs() {
@@ -863,6 +879,13 @@ function loadStorage(){
   calculateVolume("Fri");
   calculateVolume("Sat");
   calculateVolume("Sun");
+}
+
+function deleteItem() {
+  console.log("table" + selectedDay + selectedIndex)
+  localStorage.removeItem("table" + selectedDay + (selectedIndex-1));
+  document.getElementById("table" + selectedDay).deleteRow(selectedIndex);
+  closePopup();
 }
 
 
