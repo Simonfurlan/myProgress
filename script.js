@@ -455,6 +455,10 @@ function showPopup() {
 }
 
 function showPopupEdit() {
+  if (getTableRowCount("table"+selectedDay) <= 1){
+    showPopup();
+    return;
+  }
   var popup = document.getElementById('popup');
   var btnSave = document.getElementById('btnSave');
   var btnDel = document.getElementById('btnDel');
