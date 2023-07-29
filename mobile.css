@@ -257,6 +257,7 @@ table {
   height: 30px;
   width: 18%;
   background-position-y: bottom;
+  display: none;
 }
 
 .hiddenFileInput > input{
