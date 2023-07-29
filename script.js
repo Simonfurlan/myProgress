@@ -475,7 +475,7 @@ function closePopup() {
 }
 
 function processInputs() {
-  var textInput = document.getElementById('input1').value;
+  var textInput = getSelectedElement();
   var intInput1 = parseInt(document.getElementById('input2').value);
   var intInput2 = parseInt(document.getElementById('input3').value);
   var intInput3 = parseInt(document.getElementById('input4').value);
@@ -1009,4 +1009,265 @@ function importJSON(event) {
   };
 
   reader.readAsText(file);
+}
+
+
+const inputField = document.getElementById('input1');
+const suggestionList = document.getElementById('suggestionList');
+
+const suggestions = [
+  'Leg Press',
+  'Bench Press',
+  'French Press',
+  'Squats',
+  'Deadlift',
+  'Shoulder Press',
+  'Bicep Curls',
+  'Tricep Dips',
+  'Pull-ups',
+  'Push-ups',
+  'Lunges',
+  'Dumbbell Rows',
+  'Lat Pulldown',
+  'Chest Fly',
+  'Plank',
+  'Crunches',
+  'Russian Twist',
+  'Leg Raises',
+  'Calf Raises',
+  'Hamstring Curls',
+  'Barbell Rows',
+  'Overhead Tricep Extensions',
+  'Arnold Press',
+  'Bent Over Rows',
+  'Incline Bench Press',
+  'Cable Crossovers',
+  'Side Lateral Raises',
+  'Hammer Curls',
+  'Preacher Curls',
+  'Skull Crushers',
+  'Dips',
+  'Chin-ups',
+  'Front Squats',
+  'Box Jumps',
+  'Burpees',
+  'Kettlebell Swings',
+  'Romanian Deadlifts',
+  'Good Mornings',
+  'Step Ups',
+  'Wall Sits',
+  'Russian Twists',
+  'Reverse Crunches',
+  'Supermans',
+  'Seated Calf Raises',
+  'Glute Bridges',
+  'Hip Thrusts',
+  'Single Leg Deadlifts',
+  'Pull-overs',
+  'Bent Over Raises',
+  'Tricep Kickbacks',
+  'Lateral Pull-downs',
+  'Seated Rows',
+  'Dumbbell Bench Press',
+  'Incline Dumbbell Press',
+  'Pec Deck Fly',
+  'Hanging Leg Raises',
+  'Plank Shoulder Taps',
+  'Mountain Climbers',
+  'Medicine Ball Slams',
+  'Box Squats',
+  'Jump Squats',
+  'Split Squats',
+  'Box Step-ups',
+  'Kettlebell Goblet Squats',
+  'Single Leg Press',
+  'Dumbbell Lunges',
+  'Barbell Lunges',
+  'Seated Leg Curl',
+  'Stiff Leg Deadlifts',
+  'Barbell Curls',
+  'Hammer Curls',
+  'Concentration Curls',
+  'Tricep Rope Pushdowns',
+  'Tricep Bench Dips',
+  'Lat Pulldowns',
+  'Close Grip Bench Press',
+  'Pullover',
+  'Pull-ups',
+  'Chin-ups',
+  'Cable Rows',
+  'Reverse Fly',
+  'Arnold Press',
+  'Lateral Raises',
+  'Front Raises',
+  'Upright Rows',
+  'Calf Raises',
+  'Toe Raises',
+  'Seated Calf Raises',
+  'Leg Extensions',
+  'Glute Bridges',
+  'Donkey Kicks',
+  'Side Leg Raises',
+  'Hip Abduction',
+  'Hip Adduction',
+  'Cable Pull-throughs',
+  'Kettlebell Swings',
+  'Sumo Deadlifts',
+  'Romanian Deadlifts',
+  'Hip Thrusts',
+  'Barbell Hip Thrusts',
+  'Goblet Squats',
+  'Kettlebell Sumo Squats',
+  'Step-ups',
+  'Split Squats',
+  'Cable Crunches',
+  'Hanging Leg Raises',
+  'Ab Rollouts',
+  'Russian Twists',
+  'Bicycle Crunches',
+  'Flutter Kicks',
+  'Medicine Ball Sit-ups',
+  'Plank',
+  'Side Plank',
+  'Reverse Plank',
+  'Lying Leg Raises',
+  'Supermans',
+  'Back Extensions',
+  'Seated Russian Twists',
+  'Seated Leg Tucks',
+  'Seated Knee Tucks',
+  'Russian Twist with Medicine Ball',
+  'Russian Twist with Dumbbell',
+  'Standing Calf Raises',
+  'Leg Press Calf Raises',
+  'Donkey Calf Raises',
+  'Donkey Kicks',
+  'Hip Thrusts',
+  'Clamshell',
+  'Fire Hydrants',
+  'Banded Lateral Walk',
+  'Barbell Glute Bridge',
+  'Reverse Hyperextension',
+  'Single Leg Deadlifts',
+  'Dumbbell Deadlifts',
+  'Bent Over Rows',
+  'Seated Cable Rows',
+  'Face Pulls',
+  'Front Raises',
+  'Bent Over Raises',
+  'Upright Rows',
+  'Cable Curl',
+  'Incline Dumbbell Curl',
+  'Hammer Curl',
+  'Cable Hammer Curl',
+  'Tricep Pushdown',
+  'Tricep Kickback',
+  'Skull Crusher',
+  'Tricep Dips',
+  'Lat Pulldown',
+  'Cable Lat Pulldown',
+  'Assisted Pull-ups',
+  'Incline Push-ups',
+  'Dips',
+  'Diamond Push-ups',
+  'Box Jumps',
+  'Box Step-ups',
+  'Burpees',
+  'Kettlebell Swings',
+  'Kettlebell Clean and Press',
+  'Sumo Deadlift High Pull',
+  'Good Mornings',
+  'Single Leg Box Squat',
+  'Single Leg Glute Bridge',
+  'Barbell Hip Thrust',
+  'Kettlebell Goblet Squat',
+  'Dumbbell Lunges',
+  'Barbell Lunges',
+  'Leg Curls',
+  'Lying Leg Curls',
+  'Seated Leg Curls',
+  'Stiff Leg Deadlift',
+  'Sumo Deadlift',
+  'Barbell Curl',
+  'Dumbbell Curl',
+  'Preacher Curl',
+  'Concentration Curl',
+  'Cable Rope Curl',
+  'Tricep Rope Pushdown',
+  'Overhead Tricep Extension',
+  'Tricep Bench Dip',
+  'Lat Pulldown',
+  'Seated Cable Row',
+  'One Arm Dumbbell Row',
+  'Bent Over Row',
+  'Reverse Fly',
+  'Dumbbell Shoulder Press',
+  'Arnold Press',
+  'Lateral Raise',
+  'Front Raise',
+  'Upright Row',
+  'Calf Raise',
+  'Seated Calf Raise',
+  'Leg Extension',
+  'Donkey Kick',
+  'Hip Thrust',
+  'Step-up',
+  'Split Squat',
+  'Russian Twist',
+  'Medicine Ball Twist',
+  'Hanging Leg Raise',
+  'Lying Leg Raise',
+  'Back Extension',
+  'Reverse Crunch',
+  'Seated Russian Twist',
+  'Cable Woodchop',
+  'Glute Bridge',
+  'Seated Leg Tuck',
+  'Lying Knee Raise',
+  'Weighted Russian Twist',
+  'Weighted Decline Crunch',
+  'Standing Calf Raise',
+  'Leg Press Calf Raise',
+  'Standing Donkey Kick',
+  'Banded Glute Bridge',
+  'Banded Clamshell',
+  'Banded Hip Thrust',
+  'Reverse Hyper',
+  'Dumbbell Deadlift',
+  'Sumo Deadlift',
+];
+
+inputField.addEventListener('input', function() {
+    const inputText = inputField.value.toLowerCase();
+    const filteredSuggestions = suggestions.filter(function(suggestion) {
+        return suggestion.toLowerCase().startsWith(inputText);
+    });
+
+    renderSuggestions(filteredSuggestions);
+});
+
+function renderSuggestions(filteredSuggestions) {
+    suggestionList.innerHTML = '';
+
+    filteredSuggestions.forEach(function(suggestion) {
+        const liElement = document.createElement('li');
+        liElement.textContent = suggestion;
+        liElement.addEventListener('click', function() {
+            inputField.value = suggestion;
+            suggestionList.innerHTML = '';
+        });
+        suggestionList.appendChild(liElement);
+    });
+}
+
+// Schließe die Vorschlagsliste, wenn der Benutzer außerhalb des Eingabefeldes klickt
+document.addEventListener('click', function(event) {
+    if (!inputField.contains(event.target)) {
+        suggestionList.innerHTML = '';
+    }
+});
+
+// Rückgabe des ausgewählten Elements als String
+function getSelectedElement() {
+    return inputField.value;
 }

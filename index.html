@@ -29,7 +29,12 @@
          <div class="popup-content">
             <span class="close" onclick="closePopup()">&times;</span>
             <label style="margin-bottom: 6px;" for="text-input">Exercise: </label>
-            <input id = "input1" style="margin-top: 6px;margin-bottom: 10px;border: none;background: #e8e8e8;" placeholder="Benchpress" type="text">
+
+            <div class="autocomplete">
+               <input type="text" id="input1" style="margin-top: 6px;margin-bottom: 10px;border: none;background: #e8e8e8;" placeholder="Benchpress">
+               <ul id="suggestionList"></ul>
+            </div>
+
             <label style="margin-bottom: 6px;" for="integer-input1">Max Weight (kg): </label>
             <input id = "input2" style="margin-top: 6px;margin-bottom: 10px;border: none;background: #e8e8e8;" placeholder="100" type="number">
             <label style="margin-bottom: 6px;" for="integer-input2">Sets: </label>
