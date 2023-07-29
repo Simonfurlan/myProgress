@@ -251,6 +251,7 @@ table {
   float: right;
   display: block;
   background: url(delete-icon.png) 0% 0% / 22px no-repeat;
+  background-origin: content-box;
   height: 31px;
   width: 18%;
   background-position-y: bottom;
