@@ -246,6 +246,15 @@ table {
   margin-right: -32px;
 }
 
+.btnDel {
+  border: none;
+  float: right;
+  display: block;
+  background: url(delete-icon.png) 0% 0% / 22px no-repeat;
+  height: 31px;
+  width: 18%;
+  background-position-y: bottom;
+}
 
 .hiddenFileInput > input{
   height: 100%;

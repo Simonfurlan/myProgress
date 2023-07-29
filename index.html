@@ -27,7 +27,7 @@
 
       <div class="popup" id="popup">
          <div class="popup-content">
-            <span class="close" onclick="closePopup()">&times;</span>
+            <span class="close" onclick="closePopup()"></span>
             <label style="margin-bottom: 6px;" for="text-input">Exercise: </label>
 
             <div class="autocomplete">
@@ -43,7 +43,7 @@
             <input id = "input4" style="margin-top: 6px;margin-bottom: 10px;border: none;background: #e8e8e8;" placeholder="10" type="number">
             <div style="height: 30px;">
             <button id = "btnSave" class="popupBtn" onclick="processInputs()">Save</button>
-            <button id = "btnDel" style="margin-top: 6px; display: block; background: url(delete-icon.png) 0% 0% / 22px no-repeat; height: 32px; float: left; border: solid; border-color: white; width: 32px;" onclick="deleteItem()"></button>
+            <button id = "btnDel" class="btnDel" onclick="deleteItem()"></button>
             </div>
          </div>
       </div>
