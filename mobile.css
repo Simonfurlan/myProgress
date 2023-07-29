@@ -276,8 +276,8 @@ table {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(10px);
   z-index: 1;
 }
@@ -296,10 +296,15 @@ table {
 }
 
 .close {
-  float: right;
-  font-size: 20px;
-  font-weight: bold;
+  position: absolute;
   cursor: pointer;
+  width: 32px;
+  height: 32px;
+  background: url(close-icon.png) no-repeat;
+  background-size: 15px;
+  background-position-x: center;
+  right: 10px;
+  top: 20px;
 }
 
 .close:hover {
