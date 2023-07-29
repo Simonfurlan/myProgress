@@ -248,7 +248,7 @@ table {
 
 .btnDel {
   border: none;
-  margin-top: 3px;
+  margin-top: 0px;
   float: left;
   background: url(delete-icon.png) 50% 0% / 22px no-repeat;
   background-origin: content-box;
