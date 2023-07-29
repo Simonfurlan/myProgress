@@ -248,11 +248,13 @@ table {
 
 .btnDel {
   border: none;
-  float: right;
-  display: block;
-  background: url(delete-icon.png) 0% 0% / 22px no-repeat;
+  margin-top: 5px;
+  float: left;
+  background: url(delete-icon.png) 50% 0% / 22px no-repeat;
   background-origin: content-box;
-  height: 31px;
+  border-bottom-style: outset;
+  border-color: transparent;
+  height: 30px;
   width: 18%;
   background-position-y: bottom;
 }
