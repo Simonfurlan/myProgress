@@ -451,12 +451,14 @@ function replaceRow(table, e1, e2, e3, e4) {
 function showPopup() {
   var popup = document.getElementById('popup');
   popup.style.display = 'block';
+  document.body.classList.add('disable-scroll');
 }
 
 function showPopupEdit() {
   var popup = document.getElementById('popup');
   var btnSave = document.getElementById('btnSave');
   var btnDel = document.getElementById('btnDel');
+  document.body.classList.add('disable-scroll');
 
   popup.style.display = 'block';
   btnSave.className = "popupBtnDel";
@@ -467,6 +469,7 @@ function closePopup() {
   var popup = document.getElementById('popup');
   var btnSave = document.getElementById('btnSave');
   var btnDel = document.getElementById('btnDel');
+  document.body.classList.remove('disable-scroll');
 
   popup.style.display = 'none';
   btnSave.className = "popupBtn";

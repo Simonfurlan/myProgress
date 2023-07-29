@@ -356,3 +356,7 @@ table {
 #suggestionList li:hover {
   background-color: #f1f1f1;
 }
+
+body.disable-scroll {
+  overflow: hidden;
+}
